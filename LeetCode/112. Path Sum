@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        if(!root) return false;
+        stack<pair<TreeNode*, int>> store;
+        store.push({root, targetSum-root->val});
+        while(!store.empty()){
+            pair<TreeNode*, int> node = store.top();
+            store.pop();
+            if(!node.first->left && !node.first->right && node.second == 0) return true;
+            if(node.first->left){
+                store.push({node.first->left, node.second - node.first->left->val});
+            }
+            if(node.first->right){
+                store.push({node.first->right, node.second - node.first->right->val});
+            }
+        }
+        return false;
+    }
+};
