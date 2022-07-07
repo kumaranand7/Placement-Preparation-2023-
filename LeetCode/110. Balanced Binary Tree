@@ -12,3 +12,4 @@ class Solution {
         return Math.max(depth(root.left), depth(root.right)) + 1;
     }
 }
+    
