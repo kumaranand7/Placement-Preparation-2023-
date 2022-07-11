@@ -2,7 +2,7 @@ void setZeros(vector<vector<int>> &matrix)
 
 {
 
-// Write your code here.
+// Write your code here
 
   bool col = false, row = false;
 
